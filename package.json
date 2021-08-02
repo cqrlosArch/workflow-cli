@@ -1,0 +1,30 @@
+{
+  "name": "template-pug-sass-autoprefixer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:sass": "sass ./scss/styles.scss:./docs/css/styles.min.css -w",
+    "dev:pug": "pug views/pages --watch --out docs --pretty",
+    "build:sass": "sass ./scss/styles.scss:./docs/css/styles.min.css --style compressed",
+    "build:pug": "pug views/pages --out docs",
+    "build:prefix": "postcss ./docs/css/styles.min.css --replace --use autoprefixer",
+    "start": "npm-run-all --parallel dev:pug dev:sass",
+    "build": "npm-run-all build:sass build:pug build:prefix"
+  },
+  "keywords": [],
+  "author": "Carlos Díaz",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.32.12"
+  }
+}
