@@ -7,7 +7,12 @@ block metaTags
     include ../includes/meta_tags
     include ../includes/favicons
 
+block styles
+    link(rel="stylesheet", href="css/styles.min.css")
 block main
     include ../layout/header
     include ../layout/main_content
     include ../layout/footer
+
+block script
+    script(src="js/bundle.min.js")
